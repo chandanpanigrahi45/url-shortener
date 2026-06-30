@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # URL Shortener with Analytics Dashboard
 
 A full-stack URL shortener built with Node.js, Express, and EJS. Supports custom aliases, link expiry, QR code generation, and a server-rendered analytics dashboard with click tracking by date, referrer, and device.
@@ -31,27 +31,17 @@ docker-compose up --build
 
 Visit `http://localhost:3000`.
 
-## Running without Docker
-
-You'll need MongoDB and Redis running locally.
-
-```bash
-npm install
-cp .env.example .env
-# edit .env to point at your local mongo/redis instances
-npm run dev
-```
 
 ## Project structure
 
 ```
 url-shortener/
-├── config/         # db and redis connection setup
-├── models/         # mongoose schemas (Link, Click)
-├── routes/         # express routes (link creation/redirect, dashboard)
-├── utils/          # helper functions (short code gen, validation)
-├── views/          # EJS templates
-├── public/         # static CSS/JS
+├── config/     
+├── models/        
+├── routes/        
+├── utils/       
+├── views/         
+├── public/        
 ├── server.js
 ├── docker-compose.yml
 └── Dockerfile
@@ -65,15 +55,4 @@ url-shortener/
 4. Each click is logged asynchronously (referrer, device, browser) so the redirect itself stays fast.
 5. The dashboard aggregates click data with MongoDB's aggregation pipeline to show trends over the last 14 days.
 
-## Notes / things I'd improve with more time
 
-- Add user accounts so people can manage their own links
-- Move analytics aggregation to a scheduled job instead of computing on every dashboard load
-- Add bulk link import/export
-
-## License
-
-MIT
-=======
-# url-shortener
->>>>>>> 840e78b9ab0f19b5278a627d659d87de548f7126
